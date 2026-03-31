@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cricketify | Sky Sports</title>
+    <style>
+        :root {
+            --bg: #0b1120;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --card: rgba(15, 23, 42, 0.72);
+            --border: rgba(148, 163, 184, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 40%),
+                radial-gradient(circle at top right, rgba(129, 140, 248, 0.12), transparent 34%),
+                var(--bg);
+            padding: 24px 16px 36px;
+        }
+
+        .layout {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .topbar h1 {
+            font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+        }
+
+        .back {
+            border: 1px solid var(--border);
+            color: var(--text);
+            text-decoration: none;
+            background: var(--card);
+            padding: 10px 14px;
+            border-radius: 12px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back:hover {
+            border-color: rgba(34, 211, 238, 0.55);
+            transform: translateY(-1px);
+        }
+
+        .player-shell {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+        }
+
+        .player-meta {
+            padding: 14px 16px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .player-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #020617;
+        }
+
+        .player-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <iframe width=100% height=480 scrolling=no frameborder=0 allowtransparency=true marginwidth='0' marginheight='0' src='https://rips.in/player.php?ch=5' allowfullscreen ></iframe>
+    <main class="layout">
+        <div class="topbar">
+            <h1>Sky Sports</h1>
+            <a class="back" href="index.html">Back to Home</a>
+        </div>
+
+        <section class="player-shell">
+            <div class="player-meta">Simple, smooth page layout focused only on the stream.</div>
+            <div class="player-wrap">
+                <iframe src="https://bintv.pages.dev/?id=p/embed/admin/ppv-punjab-kings-vs-gujarat-titans/1&data=aHR0cHM6Ly9iaW50dnBsYXllci5ibG9nc3BvdC5jb20vP3E9aHR0cHM6Ly9lbWJlZHNwb3J0cy50b3AvZW1iZWQvYWRtaW4vcHB2LXB1bmphYi1raW5ncy12cy1ndWphcmF0LXRpdGFucy8x" width="800" height="450" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </main>
 </body>
 </html>
